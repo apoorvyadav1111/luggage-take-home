@@ -53,13 +53,27 @@ h1 {
     flex-direction: column;
     align-items: center;
 }
-.grid {
+
+.priority-row {
     display: grid;
     grid-template-columns: repeat(3, 50px);
     grid-gap: 15px;
     justify-content: center;
+    padding: 7px;
+    margin: 7px;
+    border: 3px dotted #000;
+    border-radius: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 50px);
+    grid-gap: 15px;
+    justify-content: center;
     margin-bottom: 20px;
 }
+
 .cell {
     width: 50px;
     height: 50px;
@@ -69,11 +83,21 @@ h1 {
     align-items: center;
     border-radius: 4px;
 }
+
 .stored {
     width: 20px;
     height: 20px;
     background: #000;
+    transition: all 0.5s ease-in-out;
+    transform: opacity(0);
+    opacity: 1;
 }
+
+.stored.removing {
+    transform: scale(0);
+    opacity: 0;
+}
+
 button {
     background: #000;
     color: #fff;
